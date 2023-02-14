@@ -31,7 +31,10 @@ def get_goose(file_name: str) -> str:
     class_df = pd.read_csv(file_name)
     validate_dataframe(class_df)
     player = class_df.loc[class_df['animal'] == 'goose', 'name'].iloc[0]
-    return player
+    if player == 'John':
+        print('Johnny B Goose')
+    else:
+        return player
 
 
 def run_game() -> None:
@@ -44,12 +47,29 @@ def run_game() -> None:
             filepath = pathlib.Path(file_name)
         goose_name = get_goose(filepath)
         print(f'The goose is {goose_name}.')
+
+        
     except Exception as ex:
         print(ex)
 
     return None
+    
+    
+
 
 
 # run the main routine
 if __name__ == '__main__':
     run_game()
+
+
+    
+
+
+
+
+
+        
+
+    
+    
