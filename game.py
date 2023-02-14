@@ -31,6 +31,9 @@ def get_goose(file_name: str) -> str:
     class_df = pd.read_csv(file_name)
     validate_dataframe(class_df)
     player = class_df.loc[class_df['animal'] == 'goose', 'name'].iloc[0]
+    
+    # added special instuctions for John
+
     if player == 'John':
         print('Johnny B Goose')
     else:
